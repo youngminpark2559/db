@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+   <HEAD>
+      <TITLE>My first HTML document</TITLE>
+      <style rel="stylesheet" type="text/css">
+body {
+ font-size: 20px;
+ 
+ margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 80px;
+    margin-left: 100px;
+    
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-right: 80px;
+    padding-left: 80px;
+    
+    line-height:35px;
+}
+/* img {
+ width:900px;
+} */
+</style>
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    "HTML-CSS" : {
+        availableFonts : ["STIX"],
+        preferredFont : "STIX",
+        webFont : "STIX-Web",
+        imageFont : null
+    }
+});
+</script>
+     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js" type="text/javascript">    
+    MathJax.Hub.Config({
+        HTML: ["input/TeX","output/HTML-CSS"],
+        TeX: { extensions: ["AMSmath.js","AMSsymbols.js"], 
+               equationNumbers: { autoNumber: "AMS" } },
+        extensions: ["tex2jax.js"],
+        jax: ["input/TeX","output/HTML-CSS"],
+        tex2jax: { inlineMath: [ ['$$$','$$$'] ],
+                   displayMath: [ ['$$$$','$$$$'] ],
+                   processEscapes: true },
+        "HTML-CSS": { availableFonts: ["TeX"],
+                      linebreaks: { automatic: true } }
+    });
+</script>
+   </HEAD>
+   <BODY>
+<xmp>
+This is personal study note
+Copyright and original reference:
+https://www.youtube.com/watch?v=1A4xokAaxa4&list=PLVsNizTWUw7HhYtI-4GGmlJ5yxNdwNI_X
+
+================================================================================
+Waterfall model for software development model 
+/home/young/Pictures/2019_08_11_12:48:13.png
+
+================================================================================
+/home/young/Pictures/2019_08_11_12:49:46.png
+
+Database modeling:
+  - Extract features from each object in real world
+  - Create tables using those features
+
+================================================================================
+Not only the object, you also need to create table for action like "buying product",
+for example, custormer_A purchased product_B
+
+================================================================================
+/home/young/Pictures/2019_08_11_12:57:58.png
+
+/home/young/Pictures/2019_08_11_12:58:11.png
+
+================================================================================
+/home/young/Pictures/2019_08_11_12:59:30.png
+
+Make the customers (who didn't buy the product) in upper parts
+
+L-shape table:
+  - disadvantage: there are wasteful spaces
+
+================================================================================
+Split L-shape table into 2 groups (customer table, buy table)
+/home/young/Pictures/2019_08_11_13:01:33.png
+
+Note that there are duplicated custormer data
+
+================================================================================
+Remove duplicated customer data
+/home/young/Pictures/2019_08_11_13:03:00.png
+
+Customer name can be primary key (PK)
+
+================================================================================
+/home/young/Pictures/2019_08_11_13:04:17.png
+
+Buy table with customers' name
+
+================================================================================
+Parent table: customer table
+Child table: buy table
+
+Those tables have relationship, and it shows like this 
+/home/young/Pictures/2019_08_11_13:13:15.png
+
+김범수 in customer table can buy 3 products in buy-table (1:N relationship of customer table and buy table)
+
+================================================================================
+Finally, architect 2 tables (userTBL, buyTBL)
+/home/young/Pictures/2019_08_11_13:15:56.png
+
+</xmp>
+   </BODY>
+</HTML>

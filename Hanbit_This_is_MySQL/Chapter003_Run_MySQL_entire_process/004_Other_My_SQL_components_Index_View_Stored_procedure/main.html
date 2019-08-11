@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+   <HEAD>
+      <TITLE>My first HTML document</TITLE>
+      <style rel="stylesheet" type="text/css">
+body {
+ font-size: 20px;
+ 
+ margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 80px;
+    margin-left: 100px;
+    
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-right: 80px;
+    padding-left: 80px;
+    
+    line-height:35px;
+}
+/* img {
+ width:900px;
+} */
+</style>
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    "HTML-CSS" : {
+        availableFonts : ["STIX"],
+        preferredFont : "STIX",
+        webFont : "STIX-Web",
+        imageFont : null
+    }
+});
+</script>
+     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js" type="text/javascript">    
+    MathJax.Hub.Config({
+        HTML: ["input/TeX","output/HTML-CSS"],
+        TeX: { extensions: ["AMSmath.js","AMSsymbols.js"], 
+               equationNumbers: { autoNumber: "AMS" } },
+        extensions: ["tex2jax.js"],
+        jax: ["input/TeX","output/HTML-CSS"],
+        tex2jax: { inlineMath: [ ['$$$','$$$'] ],
+                   displayMath: [ ['$$$$','$$$$'] ],
+                   processEscapes: true },
+        "HTML-CSS": { availableFonts: ["TeX"],
+                      linebreaks: { automatic: true } }
+    });
+</script>
+   </HEAD>
+   <BODY>
+<xmp>
+This is personal study note
+Copyright and original reference:
+https://www.youtube.com/watch?v=_ODY0tQwTe8&list=PLVsNizTWUw7HhYtI-4GGmlJ5yxNdwNI_X
+
+================================================================================
+In database, there are other components aside from table,
+such as, index, stored procedure, trigger, function, cursor, etc
+
+================================================================================
+Create table
+/home/young/Pictures/2019_08_11_09:11:55.png
+
+================================================================================
+Insert data into table (indexTBL) by using data from emplyees (db) employees (table)
+/home/young/Pictures/2019_08_11_09:14:22.png
+
+================================================================================
+/home/young/Pictures/2019_08_11_09:15:10.png
+
+================================================================================
+/home/young/Pictures/2019_08_11_09:16:54.png
+
+When you use WHERE, search is done by "full table scan"
+
+"full table scan" means that if there is 500 records, 500 records are searched to find one queried record
+
+================================================================================
+Create index with respect to indexTBL.first_name
+
+/home/young/Pictures/2019_08_11_09:23:52.png
+
+Run select again
+/home/young/Pictures/2019_08_11_09:24:43.png
+
+Non-unique key lookup (by using index)
+/home/young/Pictures/2019_08_11_09:25:08.png
+
+================================================================================
+View: virtual table
+
+/home/young/Pictures/2019_08_11_09:27:03.png
+
+================================================================================
+Create view with respect to memberTBL
+
+/home/young/Pictures/2019_08_11_09:42:42.png
+
+Actually, when part time worker runs 
+SELECT * FROM uv_memberTBL;
+following statement is executed
+SELECT memberName, memberAddress FROM memberTBL;
+
+================================================================================
+Stored procedure
+
+Programming functions in MySQL
+
+================================================================================
+Run 2 statements 
+
+/home/young/Pictures/2019_08_11_09:49:57.png
+
+================================================================================
+Create stored procedure
+
+/home/young/Pictures/2019_08_11_10:00:22.png
+
+/home/young/Pictures/2019_08_11_10:00:46.png
+
+</xmp>
+   </BODY>
+</HTML>
