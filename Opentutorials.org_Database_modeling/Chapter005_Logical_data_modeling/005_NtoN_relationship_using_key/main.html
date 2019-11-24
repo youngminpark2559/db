@@ -51,8 +51,46 @@ MathJax.Hub.Config({
    <BODY>
 <xmp>
 This is personal study note
-Copyright and original reference:
+Copyright and original reference are from:
 https://www.youtube.com/watch?v=PN121bbdgSM&list=PLuHgQVnccGMDF6rHsY9qMuJMd295Yk4sa
+
+================================================================================
+- Consider the relationship between 'Author' and 'Text'
+
+- Cardinality
+'One author' can have 'multiple texts' (N)
+'One text' can have 'multiple authors' (M)
+
+- Optionality
+'One author' can have 'no text' (optional)
+'One text' must have 'author' (mandatory)
+
+- Table scheme
+Author
+id   name
+1    kim
+2    park
+3    lee
+
+Text
+id   text
+1    The journey of life
+2    The beatiful sea
+3    Let it go
+
+Author_Text
+id  author_id  text_id
+1   1          1
+2   1          2
+3   3          1
+4   3          2
+5   3          3
+
+author () : text (N)
+author () : text (optional)
+
+author (M)         : text (N)
+author (mandatory) : text (optional)
 
 ================================================================================
 </xmp><img src='./pics/2019_08_12_13:52:57.png' alt=''><xmp>
@@ -73,13 +111,13 @@ Original:
 - In "topic" table, write "author" information
 </xmp><img src='./pics/2019_08_12_13:57:25.png' alt=''><xmp>
 
-Due to duplicated values, it breaks functions like join, search, query, ...
+Due to duplicated values, it breaks RDB functions like join, search, query, ...
 
 ================================================================================
 - In "author" table, write "topic" information
 </xmp><img src='./pics/2019_08_12_13:58:48.png' alt=''><xmp>
 
-This also breaks RDB
+This also breaks RDB paradigm
 
 ================================================================================
 - To resolve above issue, you should create "mapping table"

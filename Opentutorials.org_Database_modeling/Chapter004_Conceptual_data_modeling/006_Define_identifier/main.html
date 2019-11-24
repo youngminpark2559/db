@@ -55,49 +55,70 @@ Copyright and original reference:
 https://www.youtube.com/watch?v=4i3OUdHqMWc&list=PLuHgQVnccGMDF6rHsY9qMuJMd295Yk4sa
 
 ================================================================================
-Define entity and attribute, you should define "identifier" from "attributes"
+After define "entities" and "attributes", you should define "identifier" from "attributes of entities"
 
-identifier should be unique, and will become primary key
+================================================================================
+Entity1
+attribute1    attribute2
+
+Entity2
+attribute1    attribute2
+
+For example, let's say identifier of Entity1 is attribute1
+For example, let's say identifier of Entity2 is attribute1
+
+================================================================================
+Identifier should be unique, and identifier will become primary key
+
+The role of identifier is for the user to enable to target "specific object"
+so that that user can do some tasks on that "specific object"
 
 ================================================================================
 </xmp><img src='./pics/2019_08_12_11:57:19.png' alt=''><xmp>
 
-Candidate key: which can be primary key
+Candidate key: which potentially can be primary key
 
+================================================================================
 </xmp><img src='./pics/2019_08_12_11:57:54.png' alt=''><xmp>
 
-alternate key: is used for secondary index for performance enhancement
+Alternate keys: can be used to be hooked as secondary index for performance enhancement
 
 ================================================================================
 Composite key
 
 </xmp><img src='./pics/2019_08_12_11:59:32.png' alt=''><xmp>
 
-"Employee 1" can be involved in "dept 1" and "dept 2"
+"Employee 1" can be involved in "dept 1" and "dept 2",
 
-Only "emp_no" can't identify "row"
-Only "dept_no" can't identify "row"
+Single "emp_no" column can't identify "row"
+Single "dept_no" column can't identify "row"
 
 "emp_no" + "dept_no" can identify "row"
-"emp_no" + "dept_no" is called composite key
+"emp_no" + "dept_no" is called composite key in this scheme
 
 ================================================================================
+Look at the "Text" entity
+
 </xmp><img src='./pics/2019_08_12_12:01:35.png' alt=''><xmp>
 
 There is no candidate key for PK
 
-In that case, create "artificial key" for PK
+In that case, you need to create "artificial key" for PK (which is decorated by underline)
 </xmp><img src='./pics/2019_08_12_12:03:59.png' alt=''><xmp>
 
 ================================================================================
+Look at the "Reply" entity
+
 </xmp><img src='./pics/2019_08_12_12:09:36.png' alt=''><xmp>
 
-There is no candidate key for PK
+There is also no candidate key for PK
 
-In that case, create "artificial key" for PK
+In that case, you need to create "artificial key" for PK
 </xmp><img src='./pics/2019_08_12_12:10:15.png' alt=''><xmp>
 
 ================================================================================
+Look at the "Author" entity
+
 </xmp><img src='./pics/2019_08_12_12:10:41.png' alt=''><xmp>
 
 </xmp><img src='./pics/2019_08_12_12:11:06.png' alt=''><xmp>

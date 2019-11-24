@@ -63,7 +63,36 @@ after:
 </xmp><img src='./pics/2019_08_12_13:24:44.png' alt=''><xmp>
 
 ================================================================================
-create table for dormant
+- Consider the relationship between 'Author' and 'Dormant'
+
+- Cardinality
+'One author' can have 'one dormant' (1)
+'One dormant' can have 'one author' (1)
+
+- Optionality
+'One author' can have 'no dormant' (optional)
+'One dormant' must have 'author' (mandatory)
+
+- Table scheme
+Author
+id   text   dormant_id
+1    kim    1
+2    park   2
+3    lee
+
+Dormant
+id   dormant   author_id
+1    kim       1
+2    park      2
+
+author () : dormant (1)
+author () : dormant (optional)
+
+author (1)         : dormant (1)
+author (mandatory) : dormant (optional)
+
+================================================================================
+Create table for dormant
 </xmp><img src='./pics/2019_08_12_13:27:02.png' alt=''><xmp>
 
 ================================================================================
@@ -82,11 +111,25 @@ Author table (PK) : dormant table (FK)
 ================================================================================
 Drag and drop from parent to child tables 
 </xmp><img src='./pics/2019_08_12_13:41:00.png' alt=''><xmp>
+
+================================================================================
+Install foreign key of author into Dormant table
 </xmp><img src='./pics/2019_08_12_13:41:33.png' alt=''><xmp>
+
+================================================================================
+The installed foreign key into Dormant table
 </xmp><img src='./pics/2019_08_12_13:41:50.png' alt=''><xmp>
 
 ================================================================================
+1       0...1 means
+author (1)         : dormant (1)
+author (mandatory) : dormant (optional)
 </xmp><img src='./pics/2019_08_12_13:42:34.png' alt=''><xmp>
+
+================================================================================
+author (1)         : dormant (1)
+author (mandatory) : dormant (optional)
+author             : dormant (foreign key of author is installed in dormant table)
 </xmp><img src='./pics/2019_08_12_13:42:44.png' alt=''><xmp>
 
 </xmp>

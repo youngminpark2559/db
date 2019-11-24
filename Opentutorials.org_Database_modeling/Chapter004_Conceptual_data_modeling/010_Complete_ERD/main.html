@@ -51,28 +51,109 @@ MathJax.Hub.Config({
    <BODY>
 <xmp>
 This is personal study note
-Copyright and original reference:
+Copyright and original reference are from:
 https://www.youtube.com/watch?v=J5b38kTWFNU&list=PLuHgQVnccGMDF6rHsY9qMuJMd295Yk4sa
 
 ================================================================================
-author : text (N)
-author : text (optional)
+- Consider the relationship between "Author" and "Text"
+
+Author
+id    name
+1     kim
+2     park
+3     lee
+
+Text
+id   text                      
+1    The journey of life       
+2    The beatiful sea          
+3    Let it go                 
+4    What's your favorite movie
+
+Author_Text
+id   author_id   text_id
+1    1           1
+2    1           2
+3    3           1
+4    3           2
+5    3           3
+6    3           4
+
+author () : text (N)
+author () : text (optional)
 </xmp><img src='./pics/2019_08_12_12:46:29.png' alt=''><xmp>
 
 ================================================================================
-text : author (N)
-text : author (mandatory)
+author (M)         : text (N)
+author (mandatory) : text (optional)
 </xmp><img src='./pics/2019_08_12_12:47:56.png' alt=''><xmp>
 
 ================================================================================
-text : reply (N)
-text : reply (optional)
+- Consider the relationship between "Text" and "Reply"
+
+- Cardinality
+"One text" can have "multiple replies"
+"One reply" can have "one text"
+
+- Optionality
+"One text" can have "no reply"
+"One reply" must have "text"
+
+- Table scheme
+Text
+id   text                      
+1    The journey of life       
+2    The beatiful sea          
+3    Let it go                 
+4    What's your favorite movie
+
+Reply
+id   content   text_id
+1    hi        1
+2    good      1
+3    bad       3
+4    curious   3
+5    sad       4
+6    awesome   4
+7    amazing   4
+
+================================================================================
+text () : reply (N)
+text () : reply (optional)
 </xmp><img src='./pics/2019_08_12_12:48:48.png' alt=''><xmp>
 
 ================================================================================
-reply : text (1)
-reply : text (mandatory)
+text (1)         : reply (N)
+text (mandatory) : reply (optional)
 </xmp><img src='./pics/2019_08_12_12:50:01.png' alt=''><xmp>
+
+================================================================================
+- Consider the relationship between "Author" and "Reply"
+
+- Cardinality
+"One author" can have "multiple replies" (N)
+"One reply" can have "one author" (1)
+
+- Optionality
+"One author" can have "no reply" (optional)
+"One reply" must have "author" (mandatory)
+
+- Table scheme
+Author
+id   text                      
+1    kim
+2    park
+3    lee
+
+Reply
+id   content   text_id
+1    hi        1
+2    good      1
+3    bad       1
+4    curious   3
+5    sad       3
+6    awesome   3
+7    amazing   3
 
 ================================================================================
 reply : author (1)
@@ -80,8 +161,8 @@ reply : author (mandatory)
 </xmp><img src='./pics/2019_08_12_12:50:52.png' alt=''><xmp>
 
 ================================================================================
-author : reply (N)
-author : reply (optional)
+reply (N)        : author (1)
+reply (optional) : author (mandatory)
 </xmp><img src='./pics/2019_08_12_12:51:31.png' alt=''><xmp>
 
 </xmp>
