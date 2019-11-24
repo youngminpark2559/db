@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+   <HEAD>
+      <TITLE>My first HTML document</TITLE>
+      <style rel="stylesheet" type="text/css">
+body {
+ font-size: 20px;
+ 
+ margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 80px;
+    margin-left: 100px;
+    
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-right: 80px;
+    padding-left: 80px;
+    
+    line-height:35px;
+}
+/* img {
+ width:900px;
+} */
+</style>
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    "HTML-CSS" : {
+        availableFonts : ["STIX"],
+        preferredFont : "STIX",
+        webFont : "STIX-Web",
+        imageFont : null
+    }
+});
+</script>
+     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js" type="text/javascript">    
+    MathJax.Hub.Config({
+        HTML: ["input/TeX","output/HTML-CSS"],
+        TeX: { extensions: ["AMSmath.js","AMSsymbols.js"], 
+               equationNumbers: { autoNumber: "AMS" } },
+        extensions: ["tex2jax.js"],
+        jax: ["input/TeX","output/HTML-CSS"],
+        tex2jax: { inlineMath: [ ['$$$','$$$'] ],
+                   displayMath: [ ['$$$$','$$$$'] ],
+                   processEscapes: true },
+        "HTML-CSS": { availableFonts: ["TeX"],
+                      linebreaks: { automatic: true } }
+    });
+</script>
+   </HEAD>
+   <BODY>
+<xmp>
+This is personal study note
+Copyright and original reference are from:
+https://www.youtube.com/watch?v=FYDHJbIwm5Y&list=PLuHgQVnccGMDF6rHsY9qMuJMd295Yk4sa
+
+================================================================================
+Each column should be automatic
+
+================================================================================
+</xmp><img src='./pics/2019_08_12_14:48:24.png' alt=''><xmp>
+
+Unnormalized form table
+First normal form table
+
+================================================================================
+</xmp><img src='./pics/2019_08_12_14:49:22.png' alt=''><xmp>
+
+Meaning of "atomic column": each column should have one value
+
+"Tag column" is not atomic
+
+================================================================================
+"None atomic column" can be no problematic if you don't need to divide data like "rdb, free"
+
+================================================================================
+However, "none atomic column" can be problematic if you want to perform following operations
+
+- SELECT * FROM topic WHERE tag='free' (where condition)
+- SELECT * FROM topic ORDER BY tag (sort)
+
+================================================================================
+For 1NF, method1
+
+"This row" can be splited into "2 rows" to satisfy "1NF"
+</xmp><img src='./pics/2019_08_12_14:53:00.png' alt=''><xmp>
+
+Even if it satisfies 1ND but there happen "more duplicates" in rows
+
+================================================================================
+To satisfy 1NF, you can use method2 (but which is not flexible) by create 2 tag columns (tag1, tag2)
+
+</xmp><img src='./pics/2019_08_12_14:54:06.png' alt=''><xmp>
+
+================================================================================
+To satisfy 1NF, you can use method3 (which turns out the best one)
+
+Split the table
+
+topic ()  : tag (N)
+topic (M) : tag (N)
+
+</xmp><img src='./pics/2019_08_12_14:58:19.png' alt=''><xmp>
+
+</xmp>
+   </BODY>
+</HTML>

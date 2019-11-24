@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+   <HEAD>
+      <TITLE>My first HTML document</TITLE>
+      <style rel="stylesheet" type="text/css">
+body {
+ font-size: 20px;
+ 
+ margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 80px;
+    margin-left: 100px;
+    
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-right: 80px;
+    padding-left: 80px;
+    
+    line-height:35px;
+}
+/* img {
+ width:900px;
+} */
+</style>
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    "HTML-CSS" : {
+        availableFonts : ["STIX"],
+        preferredFont : "STIX",
+        webFont : "STIX-Web",
+        imageFont : null
+    }
+});
+</script>
+     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js" type="text/javascript">    
+    MathJax.Hub.Config({
+        HTML: ["input/TeX","output/HTML-CSS"],
+        TeX: { extensions: ["AMSmath.js","AMSsymbols.js"], 
+               equationNumbers: { autoNumber: "AMS" } },
+        extensions: ["tex2jax.js"],
+        jax: ["input/TeX","output/HTML-CSS"],
+        tex2jax: { inlineMath: [ ['$$$','$$$'] ],
+                   displayMath: [ ['$$$$','$$$$'] ],
+                   processEscapes: true },
+        "HTML-CSS": { availableFonts: ["TeX"],
+                      linebreaks: { automatic: true } }
+    });
+</script>
+   </HEAD>
+   <BODY>
+<xmp>
+This is personal study note
+Copyright and original reference:
+https://www.youtube.com/watch?v=hbZ96tnbN4M&list=PLuHgQVnccGMDF6rHsY9qMuJMd295Yk4sa
+
+================================================================================
+</xmp><img src='./pics/2019_08_12_11:21:00.png' alt=''><xmp>
+
+conceptually model above real world project
+
+Following 2 ways are valid to represent above project
+But second one is more valid for RDB
+</xmp><img src='./pics/2019_08_12_11:21:50.png' alt=''><xmp>
+
+================================================================================
+</xmp><img src='./pics/2019_08_12_11:23:01.png' alt=''><xmp>
+
+To resolve above issue, you can try to create large table
+</xmp><img src='./pics/2019_08_12_11:23:27.png' alt=''><xmp>
+
+But large single table causes "duplications"
+
+================================================================================
+Better modeling for RDB
+</xmp><img src='./pics/2019_08_12_11:25:08.png' alt=''><xmp>
+
+================================================================================
+relationships
+</xmp><img src='./pics/2019_08_12_11:26:56.png' alt=''><xmp>
+
+Advantages:
+  - you can group data with respect to topic
+  - If you would like to query data about "text", you can search only "text table"
+  - You can use "join" when you query "text" along with "author information"
+  </xmp><img src='./pics/2019_08_12_11:29:13.png' alt=''><xmp>
+
+
+</xmp>
+   </BODY>
+</HTML>

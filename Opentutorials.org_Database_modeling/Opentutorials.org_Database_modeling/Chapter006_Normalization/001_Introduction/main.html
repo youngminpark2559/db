@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+   <HEAD>
+      <TITLE>My first HTML document</TITLE>
+      <style rel="stylesheet" type="text/css">
+body {
+ font-size: 20px;
+ 
+ margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 80px;
+    margin-left: 100px;
+    
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-right: 80px;
+    padding-left: 80px;
+    
+    line-height:35px;
+}
+/* img {
+ width:900px;
+} */
+</style>
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    "HTML-CSS" : {
+        availableFonts : ["STIX"],
+        preferredFont : "STIX",
+        webFont : "STIX-Web",
+        imageFont : null
+    }
+});
+</script>
+     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js" type="text/javascript">    
+    MathJax.Hub.Config({
+        HTML: ["input/TeX","output/HTML-CSS"],
+        TeX: { extensions: ["AMSmath.js","AMSsymbols.js"], 
+               equationNumbers: { autoNumber: "AMS" } },
+        extensions: ["tex2jax.js"],
+        jax: ["input/TeX","output/HTML-CSS"],
+        tex2jax: { inlineMath: [ ['$$$','$$$'] ],
+                   displayMath: [ ['$$$$','$$$$'] ],
+                   processEscapes: true },
+        "HTML-CSS": { availableFonts: ["TeX"],
+                      linebreaks: { automatic: true } }
+    });
+</script>
+   </HEAD>
+   <BODY>
+<xmp>
+This is personal study note
+Copyright and original reference are from:
+https://www.youtube.com/watch?v=iu8W0zCiGb8&list=PLuHgQVnccGMDF6rHsY9qMuJMd295Yk4sa
+
+================================================================================
+refined_data_for_RDB_table=normalization(unrefined_data)
+
+normalization: recipe
+unrefined_data: raw table
+refined_data_for_RDB_table: table which fits to RDB
+
+================================================================================
+</xmp><img src='./pics/2019_08_12_14:39:28.png' alt=''><xmp>
+
+unf: un normalized form table
+1nf: first normal form table (each column should be atomic)
+2nf: second normal form table (nor partial dependencies)
+...
+6nf: ideal form table
+
+industry: unf - 3nf
+research: eknf -
+
+================================================================================
+</xmp><img src='./pics/2019_08_12_14:42:29.png' alt=''><xmp>
+
+- title+type --> composite key, primary key (each row is identified by those 2 columns)
+
+- tag column: "bad column" because it has 2 values in one field
+
+- author_name, author_profile: "bad column" because they're duplicated in rows
+
+- Due to those "bad columns", unnormalized form table is not fit to RDB
+
+================================================================================
+Process: unf -> 1nf -> 2nf -> 3nf
+
+</xmp>
+   </BODY>
+</HTML>

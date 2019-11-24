@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+   <HEAD>
+      <TITLE>My first HTML document</TITLE>
+      <style rel="stylesheet" type="text/css">
+body {
+ font-size: 20px;
+ 
+ margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 80px;
+    margin-left: 100px;
+    
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-right: 80px;
+    padding-left: 80px;
+    
+    line-height:35px;
+}
+/* img {
+ width:900px;
+} */
+</style>
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    "HTML-CSS" : {
+        availableFonts : ["STIX"],
+        preferredFont : "STIX",
+        webFont : "STIX-Web",
+        imageFont : null
+    }
+});
+</script>
+     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js" type="text/javascript">    
+    MathJax.Hub.Config({
+        HTML: ["input/TeX","output/HTML-CSS"],
+        TeX: { extensions: ["AMSmath.js","AMSsymbols.js"], 
+               equationNumbers: { autoNumber: "AMS" } },
+        extensions: ["tex2jax.js"],
+        jax: ["input/TeX","output/HTML-CSS"],
+        tex2jax: { inlineMath: [ ['$$$','$$$'] ],
+                   displayMath: [ ['$$$$','$$$$'] ],
+                   processEscapes: true },
+        "HTML-CSS": { availableFonts: ["TeX"],
+                      linebreaks: { automatic: true } }
+    });
+</script>
+   </HEAD>
+   <BODY>
+<xmp>
+This is personal study note
+Copyright and original reference are from:
+https://www.youtube.com/watch?v=J5b38kTWFNU&list=PLuHgQVnccGMDF6rHsY9qMuJMd295Yk4sa
+
+================================================================================
+- Consider the relationship between "Author" and "Text"
+
+Author
+id    name
+1     kim
+2     park
+3     lee
+
+Text
+id   text                      
+1    The journey of life       
+2    The beatiful sea          
+3    Let it go                 
+4    What's your favorite movie
+
+Author_Text
+id   author_id   text_id
+1    1           1
+2    1           2
+3    3           1
+4    3           2
+5    3           3
+6    3           4
+
+author () : text (N)
+author () : text (optional)
+</xmp><img src='./pics/2019_08_12_12:46:29.png' alt=''><xmp>
+
+================================================================================
+author (M)         : text (N)
+author (mandatory) : text (optional)
+</xmp><img src='./pics/2019_08_12_12:47:56.png' alt=''><xmp>
+
+================================================================================
+- Consider the relationship between "Text" and "Reply"
+
+- Cardinality
+"One text" can have "multiple replies"
+"One reply" can have "one text"
+
+- Optionality
+"One text" can have "no reply"
+"One reply" must have "text"
+
+- Table scheme
+Text
+id   text                      
+1    The journey of life       
+2    The beatiful sea          
+3    Let it go                 
+4    What's your favorite movie
+
+Reply
+id   content   text_id
+1    hi        1
+2    good      1
+3    bad       3
+4    curious   3
+5    sad       4
+6    awesome   4
+7    amazing   4
+
+================================================================================
+text () : reply (N)
+text () : reply (optional)
+</xmp><img src='./pics/2019_08_12_12:48:48.png' alt=''><xmp>
+
+================================================================================
+text (1)         : reply (N)
+text (mandatory) : reply (optional)
+</xmp><img src='./pics/2019_08_12_12:50:01.png' alt=''><xmp>
+
+================================================================================
+- Consider the relationship between "Author" and "Reply"
+
+- Cardinality
+"One author" can have "multiple replies" (N)
+"One reply" can have "one author" (1)
+
+- Optionality
+"One author" can have "no reply" (optional)
+"One reply" must have "author" (mandatory)
+
+- Table scheme
+Author
+id   text                      
+1    kim
+2    park
+3    lee
+
+Reply
+id   content   text_id
+1    hi        1
+2    good      1
+3    bad       1
+4    curious   3
+5    sad       3
+6    awesome   3
+7    amazing   3
+
+================================================================================
+reply : author (1)
+reply : author (mandatory)
+</xmp><img src='./pics/2019_08_12_12:50:52.png' alt=''><xmp>
+
+================================================================================
+reply (N)        : author (1)
+reply (optional) : author (mandatory)
+</xmp><img src='./pics/2019_08_12_12:51:31.png' alt=''><xmp>
+
+</xmp>
+   </BODY>
+</HTML>
